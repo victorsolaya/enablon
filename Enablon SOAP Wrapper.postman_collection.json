@@ -1,0 +1,6105 @@
+{
+	"info": {
+		"_postman_id": "fbba371c-7761-412c-8f83-9d826429309f",
+		"name": "Enablon SOAP Wrapper",
+		"description": "Wrapper REST endpoints for Enablon SOAP operations. Each operation accepts JSON with credentials and parameters (object or raw XML). The function key must be provided via the x-functions-key header or as query string when creating connection.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10876254"
+	},
+	"item": [
+		{
+			"name": "ExportData",
+			"item": [
+				{
+					"name": "ExportData operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ExportData",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ExportData"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ExportData",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ExportData"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ExportData",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ExportData"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ImportData",
+			"item": [
+				{
+					"name": "ImportData operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ImportData",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ImportData"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ImportData",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ImportData"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ImportData",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ImportData"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ExportBinaryData",
+			"item": [
+				{
+					"name": "ExportBinaryData operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ExportBinaryData",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ExportBinaryData"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ExportBinaryData",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ExportBinaryData"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ExportBinaryData",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ExportBinaryData"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ImportBinaryData",
+			"item": [
+				{
+					"name": "ImportBinaryData operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ImportBinaryData",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ImportBinaryData"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ImportBinaryData",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ImportBinaryData"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ImportBinaryData",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ImportBinaryData"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "odRemoteWorkflowPopupTextRCMInsp",
+			"item": [
+				{
+					"name": "odRemoteWorkflowPopupTextRCMInsp operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/odRemoteWorkflowPopupTextRCMInsp",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"odRemoteWorkflowPopupTextRCMInsp"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/odRemoteWorkflowPopupTextRCMInsp",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"odRemoteWorkflowPopupTextRCMInsp"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/odRemoteWorkflowPopupTextRCMInsp",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"odRemoteWorkflowPopupTextRCMInsp"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "xSetNavField",
+			"item": [
+				{
+					"name": "xSetNavField operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/xSetNavField",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"xSetNavField"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xSetNavField",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xSetNavField"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xSetNavField",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xSetNavField"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "xAQSReceiveEventID",
+			"item": [
+				{
+					"name": "xAQSReceiveEventID operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/xAQSReceiveEventID",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"xAQSReceiveEventID"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xAQSReceiveEventID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xAQSReceiveEventID"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xAQSReceiveEventID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xAQSReceiveEventID"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "xReceivePlatformData",
+			"item": [
+				{
+					"name": "xReceivePlatformData operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/xReceivePlatformData",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"xReceivePlatformData"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xReceivePlatformData",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xReceivePlatformData"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xReceivePlatformData",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xReceivePlatformData"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "CS_ProcessLaunch",
+			"item": [
+				{
+					"name": "CS_ProcessLaunch operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/CS_ProcessLaunch",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"CS_ProcessLaunch"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/CS_ProcessLaunch",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"CS_ProcessLaunch"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/CS_ProcessLaunch",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"CS_ProcessLaunch"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "xDeletePlatform",
+			"item": [
+				{
+					"name": "xDeletePlatform operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/xDeletePlatform",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"xDeletePlatform"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xDeletePlatform",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xDeletePlatform"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xDeletePlatform",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xDeletePlatform"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "xTestRemote",
+			"item": [
+				{
+					"name": "xTestRemote operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/xTestRemote",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"xTestRemote"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xTestRemote",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xTestRemote"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xTestRemote",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xTestRemote"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ocAllVaporCalculations",
+			"item": [
+				{
+					"name": "ocAllVaporCalculations operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ocAllVaporCalculations",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ocAllVaporCalculations"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ocAllVaporCalculations",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ocAllVaporCalculations"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ocAllVaporCalculations",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ocAllVaporCalculations"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "xReceiveEventID",
+			"item": [
+				{
+					"name": "xReceiveEventID operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/xReceiveEventID",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"xReceiveEventID"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xReceiveEventID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xReceiveEventID"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xReceiveEventID",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xReceiveEventID"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "sMatrixPopupContent",
+			"item": [
+				{
+					"name": "sMatrixPopupContent operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sMatrixPopupContent",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sMatrixPopupContent"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sMatrixPopupContent",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sMatrixPopupContent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sMatrixPopupContent",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sMatrixPopupContent"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "xUpdatePlaftormPasswordFlag",
+			"item": [
+				{
+					"name": "xUpdatePlaftormPasswordFlag operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/xUpdatePlaftormPasswordFlag",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"xUpdatePlaftormPasswordFlag"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xUpdatePlaftormPasswordFlag",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xUpdatePlaftormPasswordFlag"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xUpdatePlaftormPasswordFlag",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xUpdatePlaftormPasswordFlag"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "GetMainMenuHtml",
+			"item": [
+				{
+					"name": "GetMainMenuHtml operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/GetMainMenuHtml",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"GetMainMenuHtml"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/GetMainMenuHtml",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"GetMainMenuHtml"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/GetMainMenuHtml",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"GetMainMenuHtml"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "xWSUpdateMasterTasks",
+			"item": [
+				{
+					"name": "xWSUpdateMasterTasks operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/xWSUpdateMasterTasks",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"xWSUpdateMasterTasks"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xWSUpdateMasterTasks",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xWSUpdateMasterTasks"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xWSUpdateMasterTasks",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xWSUpdateMasterTasks"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "xDeleteEvent",
+			"item": [
+				{
+					"name": "xDeleteEvent operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/xDeleteEvent",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"xDeleteEvent"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xDeleteEvent",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xDeleteEvent"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xDeleteEvent",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xDeleteEvent"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "xValidatePlatformConnection",
+			"item": [
+				{
+					"name": "xValidatePlatformConnection operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/xValidatePlatformConnection",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"xValidatePlatformConnection"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xValidatePlatformConnection",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xValidatePlatformConnection"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xValidatePlatformConnection",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xValidatePlatformConnection"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "sGetSyncInfo",
+			"item": [
+				{
+					"name": "sGetSyncInfo operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sGetSyncInfo",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sGetSyncInfo"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sGetSyncInfo",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sGetSyncInfo"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sGetSyncInfo",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sGetSyncInfo"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "xRoundTripValidate",
+			"item": [
+				{
+					"name": "xRoundTripValidate operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/xRoundTripValidate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"xRoundTripValidate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xRoundTripValidate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xRoundTripValidate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xRoundTripValidate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xRoundTripValidate"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "xWSUpdateMasterNonCompliance",
+			"item": [
+				{
+					"name": "xWSUpdateMasterNonCompliance operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/xWSUpdateMasterNonCompliance",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"xWSUpdateMasterNonCompliance"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xWSUpdateMasterNonCompliance",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xWSUpdateMasterNonCompliance"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xWSUpdateMasterNonCompliance",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xWSUpdateMasterNonCompliance"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "sExportVolumetryData",
+			"item": [
+				{
+					"name": "sExportVolumetryData operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sExportVolumetryData",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sExportVolumetryData"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sExportVolumetryData",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sExportVolumetryData"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sExportVolumetryData",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sExportVolumetryData"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "sReceiveData",
+			"item": [
+				{
+					"name": "sReceiveData operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sReceiveData",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sReceiveData"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sReceiveData",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sReceiveData"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sReceiveData",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sReceiveData"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ocVaporCalculation",
+			"item": [
+				{
+					"name": "ocVaporCalculation operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ocVaporCalculation",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ocVaporCalculation"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ocVaporCalculation",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ocVaporCalculation"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ocVaporCalculation",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ocVaporCalculation"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "sReceivePendingActions",
+			"item": [
+				{
+					"name": "sReceivePendingActions operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sReceivePendingActions",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sReceivePendingActions"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sReceivePendingActions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sReceivePendingActions"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sReceivePendingActions",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sReceivePendingActions"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "xReceiveResults",
+			"item": [
+				{
+					"name": "xReceiveResults operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/xReceiveResults",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"xReceiveResults"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xReceiveResults",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xReceiveResults"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xReceiveResults",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xReceiveResults"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "sExportVolumetryFile",
+			"item": [
+				{
+					"name": "sExportVolumetryFile operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sExportVolumetryFile",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sExportVolumetryFile"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sExportVolumetryFile",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sExportVolumetryFile"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sExportVolumetryFile",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sExportVolumetryFile"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "odRemoteWorkflowPopupText",
+			"item": [
+				{
+					"name": "odRemoteWorkflowPopupText operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/odRemoteWorkflowPopupText",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"odRemoteWorkflowPopupText"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/odRemoteWorkflowPopupText",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"odRemoteWorkflowPopupText"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/odRemoteWorkflowPopupText",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"odRemoteWorkflowPopupText"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "nGetConsequenceId",
+			"item": [
+				{
+					"name": "nGetConsequenceId operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/nGetConsequenceId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"nGetConsequenceId"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/nGetConsequenceId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"nGetConsequenceId"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/nGetConsequenceId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"nGetConsequenceId"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "nGetSourceId",
+			"item": [
+				{
+					"name": "nGetSourceId operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/nGetSourceId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"nGetSourceId"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/nGetSourceId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"nGetSourceId"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/nGetSourceId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"nGetSourceId"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "xRecieveEventUpdate",
+			"item": [
+				{
+					"name": "xRecieveEventUpdate operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/xRecieveEventUpdate",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"xRecieveEventUpdate"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xRecieveEventUpdate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xRecieveEventUpdate"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/xRecieveEventUpdate",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"xRecieveEventUpdate"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "odGetWorkspaceData",
+			"item": [
+				{
+					"name": "odGetWorkspaceData operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/odGetWorkspaceData",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"odGetWorkspaceData"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/odGetWorkspaceData",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"odGetWorkspaceData"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/odGetWorkspaceData",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"odGetWorkspaceData"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "GetAvailableAppsForSite",
+			"item": [
+				{
+					"name": "GetAvailableAppsForSite operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/GetAvailableAppsForSite",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"GetAvailableAppsForSite"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/GetAvailableAppsForSite",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"GetAvailableAppsForSite"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/GetAvailableAppsForSite",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"GetAvailableAppsForSite"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ocVaporCalculationOLD",
+			"item": [
+				{
+					"name": "ocVaporCalculationOLD operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ocVaporCalculationOLD",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ocVaporCalculationOLD"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ocVaporCalculationOLD",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ocVaporCalculationOLD"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ocVaporCalculationOLD",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ocVaporCalculationOLD"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "sGetModulesVersion",
+			"item": [
+				{
+					"name": "sGetModulesVersion operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/sGetModulesVersion",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"sGetModulesVersion"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sGetModulesVersion",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sGetModulesVersion"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/sGetModulesVersion",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"sGetModulesVersion"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "ExportReport",
+			"item": [
+				{
+					"name": "ExportReport operation",
+					"request": {
+						"auth": {
+							"type": "apikey",
+							"apikey": [
+								{
+									"key": "key",
+									"value": "x-functions-key",
+									"type": "string"
+								},
+								{
+									"key": "value",
+									"value": "{{apiKey}}",
+									"type": "string"
+								},
+								{
+									"key": "in",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/xml"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+							"options": {
+								"raw": {
+									"headerFamily": "json",
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/ExportReport",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"ExportReport"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "SOAP XML response from Enablon (returned as text/xml string).",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/xml"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ExportReport",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ExportReport"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "<soap:Envelope>...</soap:Envelope>"
+						},
+						{
+							"name": "Bad gateway - error calling Enablon endpoint",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "application/json"
+									},
+									{
+										"key": "x-functions-key",
+										"value": "<API Key>",
+										"description": "Added as a part of security scheme: apikey"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"username\": \"myuser\",\n  \"password\": \"mypass\",\n  \"parameters\": {\n    \"Table\": \"Event\",\n    \"FolderId\": 123\n  }\n}",
+									"options": {
+										"raw": {
+											"headerFamily": "json",
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/ExportReport",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"ExportReport"
+									]
+								}
+							},
+							"status": "Bad Gateway",
+							"code": 502,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"error\": \"Error calling Enablon: ...\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "x-functions-key",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": "{{apiKey}}",
+				"type": "string"
+			},
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://enablon-glencore-app.azurewebsites.net/api"
+		}
+	]
+}

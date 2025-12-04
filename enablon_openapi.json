@@ -1,0 +1,2913 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Enablon SOAP Wrapper",
+    "version": "1.0.0",
+    "description": "Wrapper REST endpoints for Enablon SOAP operations. Each operation accepts JSON with credentials and parameters (object or raw XML). The function key must be provided via the x-functions-key header or as query string when creating connection."
+  },
+  "servers": [
+    {
+      "url": "https://enablon-glencore-app.azurewebsites.net/api"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "x_functions_key": {
+        "type": "apiKey",
+        "name": "x-functions-key",
+        "in": "header",
+        "description": "Function key for the Azure Function App. Power Platform will send this header when you configure the connector security as API key with header 'x-functions-key'."
+      }
+    },
+    "schemas": {
+      "GenericRequest": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string",
+            "description": "Enablon user"
+          },
+          "password": {
+            "type": "string",
+            "description": "Enablon password"
+          },
+          "parameters": {
+            "type": "object",
+            "additionalProperties": {
+              "type": [
+                "string",
+                "number",
+                "boolean"
+              ]
+            },
+            "description": "Key/value parameters for the SOAP operation. Example: { \"Table\": \"Event\", \"FolderId\": 123 }"
+          },
+          "parametersXml": {
+            "type": "string",
+            "description": "Optional raw XML fragment to be inserted inside the operation tags. If provided, it will be used instead of 'parameters'. Example: \"<Table>Event</Table><FolderId>123</FolderId>\""
+          }
+        },
+        "required": [
+          "username",
+          "password"
+        ]
+      }
+    }
+  },
+  "security": [
+    {
+      "x_functions_key": []
+    }
+  ],
+  "paths": {
+    "/ExportData": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "ExportData operation",
+        "operationId": "ExportData",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ImportData": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "ImportData operation",
+        "operationId": "ImportData",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ExportBinaryData": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "ExportBinaryData operation",
+        "operationId": "ExportBinaryData",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ImportBinaryData": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "ImportBinaryData operation",
+        "operationId": "ImportBinaryData",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/odRemoteWorkflowPopupTextRCMInsp": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "odRemoteWorkflowPopupTextRCMInsp operation",
+        "operationId": "odRemoteWorkflowPopupTextRCMInsp",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/xSetNavField": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "xSetNavField operation",
+        "operationId": "xSetNavField",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/xAQSReceiveEventID": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "xAQSReceiveEventID operation",
+        "operationId": "xAQSReceiveEventID",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/xReceivePlatformData": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "xReceivePlatformData operation",
+        "operationId": "xReceivePlatformData",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/CS_ProcessLaunch": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "CS_ProcessLaunch operation",
+        "operationId": "CS_ProcessLaunch",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/xDeletePlatform": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "xDeletePlatform operation",
+        "operationId": "xDeletePlatform",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/xTestRemote": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "xTestRemote operation",
+        "operationId": "xTestRemote",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ocAllVaporCalculations": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "ocAllVaporCalculations operation",
+        "operationId": "ocAllVaporCalculations",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/xReceiveEventID": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "xReceiveEventID operation",
+        "operationId": "xReceiveEventID",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sMatrixPopupContent": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "sMatrixPopupContent operation",
+        "operationId": "sMatrixPopupContent",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/xUpdatePlaftormPasswordFlag": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "xUpdatePlaftormPasswordFlag operation",
+        "operationId": "xUpdatePlaftormPasswordFlag",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/GetMainMenuHtml": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "GetMainMenuHtml operation",
+        "operationId": "GetMainMenuHtml",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/xWSUpdateMasterTasks": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "xWSUpdateMasterTasks operation",
+        "operationId": "xWSUpdateMasterTasks",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/xDeleteEvent": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "xDeleteEvent operation",
+        "operationId": "xDeleteEvent",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/xValidatePlatformConnection": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "xValidatePlatformConnection operation",
+        "operationId": "xValidatePlatformConnection",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sGetSyncInfo": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "sGetSyncInfo operation",
+        "operationId": "sGetSyncInfo",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/xRoundTripValidate": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "xRoundTripValidate operation",
+        "operationId": "xRoundTripValidate",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/xWSUpdateMasterNonCompliance": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "xWSUpdateMasterNonCompliance operation",
+        "operationId": "xWSUpdateMasterNonCompliance",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sExportVolumetryData": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "sExportVolumetryData operation",
+        "operationId": "sExportVolumetryData",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sReceiveData": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "sReceiveData operation",
+        "operationId": "sReceiveData",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ocVaporCalculation": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "ocVaporCalculation operation",
+        "operationId": "ocVaporCalculation",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sReceivePendingActions": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "sReceivePendingActions operation",
+        "operationId": "sReceivePendingActions",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/xReceiveResults": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "xReceiveResults operation",
+        "operationId": "xReceiveResults",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sExportVolumetryFile": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "sExportVolumetryFile operation",
+        "operationId": "sExportVolumetryFile",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/odRemoteWorkflowPopupText": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "odRemoteWorkflowPopupText operation",
+        "operationId": "odRemoteWorkflowPopupText",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/nGetConsequenceId": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "nGetConsequenceId operation",
+        "operationId": "nGetConsequenceId",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/nGetSourceId": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "nGetSourceId operation",
+        "operationId": "nGetSourceId",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/xRecieveEventUpdate": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "xRecieveEventUpdate operation",
+        "operationId": "xRecieveEventUpdate",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/odGetWorkspaceData": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "odGetWorkspaceData operation",
+        "operationId": "odGetWorkspaceData",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/GetAvailableAppsForSite": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "GetAvailableAppsForSite operation",
+        "operationId": "GetAvailableAppsForSite",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ocVaporCalculationOLD": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "ocVaporCalculationOLD operation",
+        "operationId": "ocVaporCalculationOLD",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/sGetModulesVersion": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "sGetModulesVersion operation",
+        "operationId": "sGetModulesVersion",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ExportReport": {
+      "post": {
+        "tags": [
+          "Enablon"
+        ],
+        "summary": "ExportReport operation",
+        "operationId": "ExportReport",
+        "security": [
+          {
+            "x_functions_key": []
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenericRequest"
+              },
+              "examples": {
+                "json": {
+                  "value": {
+                    "username": "myuser",
+                    "password": "mypass",
+                    "parameters": {
+                      "Table": "Event",
+                      "FolderId": 123
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "SOAP XML response from Enablon (returned as text/xml string).",
+            "content": {
+              "application/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "text/xml": {
+                "schema": {
+                  "type": "string"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "string"
+                },
+                "example": "<soap:Envelope>...</soap:Envelope>"
+              }
+            }
+          },
+          "502": {
+            "description": "Bad gateway - error calling Enablon endpoint",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "error": {
+                      "type": "string"
+                    }
+                  }
+                },
+                "example": {
+                  "error": "Error calling Enablon: ..."
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
